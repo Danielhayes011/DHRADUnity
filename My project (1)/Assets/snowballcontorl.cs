@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class snowballcontorl : MonoBehaviour
+public class snowballcontorlsc : MonoBehaviour
 {
     Rigidbody rb;
     // Start is called before the first frame update
@@ -17,10 +17,20 @@ public class snowballcontorl : MonoBehaviour
     {
         
     }
-
-    internal void ImThrowingYou(bearControl scbearscript)
+    private void OnCollisionEnter(Collision collision)
     {
-        transform.position = scbearscript.position; + 2* Vector3 up + 3 * scbearscript transform, :forward;
-        rb.velocity = 10 * (2 *Vector3.up );
+        print("Ouch");
+
+        dealwithhits thingIHit = collision.gameObject.GetComponent<dealwithhits>();
+        if (thingIHit != null)
+        {
+            thingIHit.IHitYou();
+        }
+    }
+    internal void ImThrowingYou(scbearscript scbearscript)
+    {
+        transform.position = scbearscript.transform.position + 2 *Vector3.up + 3 * scbearscript.transform.forward;
+        rb = GetComponent<Rigidbody>();
+        rb.velocity = 10 * (2 *Vector3.up + 3 * scbearscript.transform. forward );
     }
 }
