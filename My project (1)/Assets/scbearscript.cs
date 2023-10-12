@@ -39,7 +39,7 @@ public class scbearscript : MonoBehaviour
             // rb Addforce(tr.forward);
             tr.position += currentspeed * tr.forward * Time.deltaTime;
         myAnimator.SetBool("isRun", true);
-        tr.position -= currentspeed * tr.forward * Time.deltaTime;
+      //  tr.position -= currentspeed * tr.forward * Time.deltaTime;
         if (Input.GetKey(KeyCode.A))
 
             transform.Rotate(Vector3.up, turningspeed * Time.deltaTime);
