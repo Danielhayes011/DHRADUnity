@@ -43,8 +43,12 @@ public class scbearscript : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
 
             transform.Rotate(Vector3.up, turningspeed * Time.deltaTime);
+        if (Input.GetKey(KeyCode.D))
 
-        if (Input.GetMouseButton(0))
+            transform.Rotate(Vector3.down, turningspeed * Time.deltaTime);
+
+
+        if (Input.GetMouseButtonDown(0))
         {
             GameObject nergo = Instantiate( snowballCloneTemplate);
 
@@ -52,6 +56,8 @@ public class scbearscript : MonoBehaviour
             snowballcontorlsc mySnowball = nergo.GetComponent<snowballcontorlsc>();
 
             mySnowball.ImThrowingYou(this);
+
+         
         } }
     
 
